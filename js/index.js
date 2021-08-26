@@ -5,12 +5,26 @@ function agregarReceta(){
     var fecha = document.getElementById("fecha").value;
     var exp = document.getElementById("exp").value;
     var medicamentos = document.getElementById("medicamentos").value;
+    var newDiv = document.createElement("div1");
 
+    var fila="<tr><th>"+"Fecha de receta: "+"        "+fecha+"</th></tr>"+
+             "<tr><th>"+"Nombre del medico:   "+medico+"       "+"  " +"Cedula:"+"    "+cedula+"</th></tr>"+
+             "<tr><th>"+"Paciente:   "+" "+paciente+"</th></tr>"+
+             "<tr><th>"+"Fecha Exp:  "+exp+"</th></tr>"+
+             "<tr><th>"+" "+medicamentos+"</th></tr>";
+
+
+    var tablita =document.getElementById("receta").innerHTML =fila;
+   // document.getElementById("receta").innerHTML = fila; 
+    newDiv.appendChild(tablita);
     
-    console.log(medico+" "+cedula+" "+paciente+" "+fecha+" "+exp+" "+medicamentos);
+
+    var currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
+
 }
 
-
+console.log(medico+" "+cedula+" "+paciente+" "+fecha+" "+exp+" "+medicamentos);
 
 
 function limpiar(){
@@ -24,3 +38,6 @@ function limpiar(){
 
     
 }
+//var fila="<tr><td>"+"</td><td>"+cedula+"</td><td>"+paciente+"</td><td>"+fecha+"</td></tr>";
+    //document.getElementById("receta").innerHTML = fila; 
+    //"<tr><td>" "</td></tr>"
